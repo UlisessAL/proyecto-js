@@ -72,7 +72,7 @@ botonMenu.addEventListener("click", ()=> {
 
     botonOcultar.addEventListener("click", ()=> {
         tarjetaMenu.id = "ocultar-tarjeta";
-        botonOcultar.id = "ocultar-tarjeta"
+        botonOcultar.id = "ocultar-botoncito"
     })
 
     

@@ -115,3 +115,7 @@ body {
 #ocultar-tarjeta{
     display: none;
 }
+
+#ocultar-botoncito {
+    display: none;
+}
