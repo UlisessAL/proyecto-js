@@ -1,30 +1,47 @@
-const menu = [
-    {    id: 1, nombre: "pizza con muzzarela", precio: 800  },
 
-    {    id: 2, nombre: "pizza napolitana", precio: 1000  },
+const menu =[
+    { id: 1, nombre:"pizza con muzzarela", precio: 800}
 
-    {    id: 3, nombre: "ñoquis (con salsa blanca o roja) ", precio: 1200  },
+]
 
-    {    id: 4, nombre: "churrasco con papas", precio: 1400  },
+function Plato (id, nombre, precio){
+    this.id = id;
+    this.nombre = nombre;
+    this.precio = precio;
+}
 
-    {    id: 5, nombre: "lasagna", precio: 700  },
+function crearPlato(id,nombre,precio){
+    const plato = new Plato(id,nombre,precio);
+    return plato;
+}
 
-    {    id: 6, nombre: "milanesa con fritas", precio: 1200  },
+function cargarPlato(plato){
+    menu.push(plato);
+}
 
-    {    id: 7, nombre: "milanesa napolitana", precio: 1500  },
+const pizzaNapolitana = crearPlato(2,"Pizza napolitana", 1000),
+ñoquis = crearPlato(3,"Ñoquis (con salsa blanca o roja)", 1200),
+churrascoConFritas = crearPlato(4,"Churrasco con fritas", 1400),
+lasagna = crearPlato(5,"Lasagna",700),
+milanesaConFritas = crearPlato(6,"Milanesa con fritas",1200),
+milanesaNapolitana = crearPlato(7,"Milanesa napolitana",1500),
+hamburguesaSimple = crearPlato(8,"Hamburguesa simple",600),
+hamburguesaCompleta = crearPlato(9,"Hamburguesa completa",800),
+empanadas = crearPlato(10,"Empanadas c/u",100);
 
-    {    id: 8, nombre: "hamburguesa simple", precio: 600  },
-
-    {    id: 9, nombre: "hamburguesa completa", precio: 800  },
-
-    {    id: 10, nombre: "empanadas (carne, jamon y queso, etc) c/u", precio: 100  },
-];
-
+cargarPlato(pizzaNapolitana);
+cargarPlato(ñoquis);
+cargarPlato(churrascoConFritas);
+cargarPlato(lasagna);
+cargarPlato(milanesaConFritas);
+cargarPlato(milanesaNapolitana);
+cargarPlato(hamburguesaSimple);
+cargarPlato(hamburguesaCompleta);
+cargarPlato(empanadas);
 
 const tarjetaMenu = document.createElement("section");
 
 tarjetaMenu.className = "carta";
-
 
 tarjetaMenu.innerHTML = "<h2 class='titulo-lista'>El Menú</h2>\n<ul Id='lista-carta'> </ul>";
 
