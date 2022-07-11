@@ -14,6 +14,72 @@ body {
     font-family: 'Parisienne', cursive;
 }
 
+.clase-boton{
+    padding-top: 50px;
+    margin: auto;
+    width: 250px;
+    height: 100px;
+}
+
+#boton-menu{
+        min-width: 130px;
+        height: 40px;
+        color: #fff;
+        padding: 5px 10px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        position: relative;
+        display: inline-block;
+        outline: none;
+        border-radius: 5px;
+        border: none;
+        background: #a2a59e;
+        box-shadow: 0 5px #666564;
+}
+
+#boton-menu:hover {
+    box-shadow: 0 3px #666564;
+    top: 1px;
+}
+
+#boton-menu:active {
+    box-shadow: 0 0 #666564;
+    top: 5px;
+}
+
+.ocultar-menu {
+    margin-top: 30px;
+    display: none;
+    min-width: 130px;
+    height: 40px;
+    color: #fff;
+    padding: 5px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    outline: none;
+    border-radius: 5px;
+    border: none;
+    background: #a2a59e;
+    box-shadow: 0 5px #666564;
+}
+
+.ocultar-menu:hover {
+    box-shadow: 0 3px #666564;
+    top: 1px;
+}
+
+.ocultar-menu:active {
+    box-shadow: 0 0 #666564;
+    top: 5px;
+}
+
+#ocultar-menu-visible{
+    display: inline-block;
+}
+
 .carta {
     width: 500px;
     height: 750px;
@@ -25,9 +91,11 @@ body {
     font-size: 30px;
     text-align: center;
     padding-top: 50px;
+    display: block;
 }
 
 .titulo-lista{
+    display: block;
     font-size: 40px;
     text-align: center;
     font-family: 'Dancing Script', cursive;
@@ -37,8 +105,13 @@ body {
 }
 
 .elementos-lista{
+    display: block;
     list-style-type: none;
     text-align: center;
     padding-top: 10px;
     margin-bottom: 10px;
+}
+
+#ocultar-tarjeta{
+    display: none;
 }

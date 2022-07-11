@@ -39,23 +39,41 @@ cargarPlato(hamburguesaSimple);
 cargarPlato(hamburguesaCompleta);
 cargarPlato(empanadas);
 
-const tarjetaMenu = document.createElement("section");
 
-tarjetaMenu.className = "carta";
+const botonMenu = document.querySelector("#boton-menu");
 
-tarjetaMenu.innerHTML = "<h2 class='titulo-lista'>El Menú</h2>\n<ul Id='lista-carta'> </ul>";
+let plantilla = `Plato N°: ${menu.id} Nombre: ${menu.nombre} $${menu.precio}`;
 
-document.body.append(tarjetaMenu);
+botonMenu.addEventListener("click", ()=> {
+    const tarjetaMenu = document.createElement("section");
 
-const lista = document.getElementById("lista-carta")
+    tarjetaMenu.className = "carta";
+
+    tarjetaMenu.innerHTML = "<h2 class='titulo-lista'>El Menú</h2>\n<ul Id='lista-carta'> </ul>";
+
+    document.body.append(tarjetaMenu);
+
+    const lista = document.getElementById("lista-carta")
 
 
-let plantilla = `Plato N°: ${menu.id} Nombre: ${menu.nombre} $${menu.precio}`
+    
 
-for (const plantilla of menu){
-    let li = document.createElement("li")
-    li.innerHTML= plantilla
-    li.className = "elementos-lista"
-    lista.appendChild(li)
-}
+        for (const plantilla of menu){
+        let li = document.createElement("li")
+        li.innerHTML= plantilla
+        li.className = "elementos-lista"
+        lista.appendChild(li)
+    }
+
+    const botonOcultar = document.querySelector(".ocultar-menu");
+
+    botonOcultar.id = "ocultar-menu-visible"
+
+
+    botonOcultar.addEventListener("click", ()=> {
+        tarjetaMenu.id = "ocultar-tarjeta";
+    })
+
+    
+})
 
