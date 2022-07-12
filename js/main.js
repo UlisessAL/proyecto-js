@@ -40,41 +40,49 @@ cargarPlato(hamburguesaCompleta);
 cargarPlato(empanadas);
 
 
+const botonIniciar = document.querySelector(".boton-iniciar");
+
+const sectionInicio = document.querySelector("#inicio-sesion")
+
+botonIniciar.addEventListener("click", ()=> {
+    botonIniciar.id = "ocultar-tarjeta"
+    let inputInicio = document.createElement("div");
+    inputInicio.innerHTML = "<form action=''>                                <input type='text' class= 'input-inicio-1' placeholder= 'Tu Nombre'>     <br> <br>      <input type='text' class='input-inicio-2' placeholder= 'Tu Apellido'> <br> <br> <input type='button' value = 'Iniciar sesion' class = 'boton-enviar-inicio'> </form>";
+
+    sectionInicio.appendChild(inputInicio);
+
+    const inputInicio1 = document.querySelector(".input-inicio-1");
+    const inputInicio2 = document.querySelector(".input-inicio-2");
+    const botonEnviarInicio = document.querySelector(".boton-enviar-inicio");
+
+    botonEnviarInicio.addEventListener("click", ()=> {
+
+        inputInicio1.id = "ocultar-tarjeta";
+        inputInicio2.id = "ocultar-tarjeta";
+        botonEnviarInicio.id = "ocultar-tarjeta";
+
+        let nombre = inputInicio1.value;
+        let apellido = inputInicio2.value;
+
+        const mensajeBienvenida = document.createElement("div");
+
+        mensajeBienvenida.innerHTML = "<h2 class = 'titulo-bienvenida'> Bienvenido/a " + nombre + " " + apellido + ", que vamos a comer hoy?</h2>";
+
+        sectionInicio.appendChild(mensajeBienvenida);
+        
+
+
+    })
+})
+
 const botonMenu = document.querySelector("#boton-menu");
 
-let plantilla = `Plato N°: ${menu.id} Nombre: ${menu.nombre} $${menu.precio}`;
+const tarjetaMenu = document.querySelector(".lista-carta"),
+cartaMenu = document.querySelector(".carta")
 
 botonMenu.addEventListener("click", ()=> {
-    const tarjetaMenu = document.createElement("section");
-
-    tarjetaMenu.className = "carta";
-
-    tarjetaMenu.innerHTML = "<h2 class='titulo-lista'>El Menú</h2>\n<ul Id='lista-carta'> </ul>";
-
-    document.body.append(tarjetaMenu);
-
-    const lista = document.getElementById("lista-carta")
-
-
-    
-
-        for (const plantilla of menu){
-        let li = document.createElement("li")
-        li.innerHTML= plantilla
-        li.className = "elementos-lista"
-        lista.appendChild(li)
-    }
-
-    const botonOcultar = document.querySelector(".ocultar-menu");
-
-    botonOcultar.id = "ocultar-menu-visible"
-
-
-    botonOcultar.addEventListener("click", ()=> {
-        tarjetaMenu.id = "ocultar-tarjeta";
-        botonOcultar.id = "ocultar-botoncito"
-    })
-
-    
+    tarjetaMenu.id = "ocultar-menu-visible"
+    cartaMenu.id = "mostrar-carta"
 })
+
 

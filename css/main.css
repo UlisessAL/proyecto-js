@@ -5,6 +5,12 @@ body {
     background-size: cover;
 }
 
+main{
+    display: grid;
+    grid-template-areas: 
+    "inicio menu";
+}
+
 .titulo {
     background-color: #a2a59e;
     height: 60px;
@@ -14,9 +20,53 @@ body {
     font-family: 'Parisienne', cursive;
 }
 
-.clase-boton{
-    padding-top: 50px;
+#inicio-sesion{
+    grid-area: inicio;
+    width: 500px;
+    height: 500px;
     margin: auto;
+    margin-top: 200px;
+
+    background-color: #97897C;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cg stroke='%23FFFFFF' stroke-width='66.7' stroke-opacity='0.05' %3E%3Ccircle fill='%2397897C' cx='0' cy='0' r='1800'/%3E%3Ccircle fill='%23978b7e' cx='0' cy='0' r='1700'/%3E%3Ccircle fill='%23988d7f' cx='0' cy='0' r='1600'/%3E%3Ccircle fill='%23988e81' cx='0' cy='0' r='1500'/%3E%3Ccircle fill='%23989083' cx='0' cy='0' r='1400'/%3E%3Ccircle fill='%23999285' cx='0' cy='0' r='1300'/%3E%3Ccircle fill='%23999387' cx='0' cy='0' r='1200'/%3E%3Ccircle fill='%239a9589' cx='0' cy='0' r='1100'/%3E%3Ccircle fill='%239a978b' cx='0' cy='0' r='1000'/%3E%3Ccircle fill='%239b988d' cx='0' cy='0' r='900'/%3E%3Ccircle fill='%239c9a8f' cx='0' cy='0' r='800'/%3E%3Ccircle fill='%239c9c91' cx='0' cy='0' r='700'/%3E%3Ccircle fill='%239d9d93' cx='0' cy='0' r='600'/%3E%3Ccircle fill='%239e9f95' cx='0' cy='0' r='500'/%3E%3Ccircle fill='%239fa098' cx='0' cy='0' r='400'/%3E%3Ccircle fill='%23a0a29a' cx='0' cy='0' r='300'/%3E%3Ccircle fill='%23a1a39c' cx='0' cy='0' r='200'/%3E%3Ccircle fill='%23A2A59E' cx='0' cy='0' r='100'/%3E%3C/g%3E%3C/svg%3E");
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.boton-iniciar{
+    margin-left: 140px;
+    margin-top: 220px;
+
+    min-width: 130px;
+    height: 40px;
+    color: #fff;
+    padding: 5px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    border-radius: 5px;
+    border: none;
+    background: #a2a59e;
+    box-shadow: 0 5px #666564;
+}
+
+.boton-iniciar:hover {
+    box-shadow: 0 3px #666564;
+    top: 1px;
+}
+
+.boton-iniciar:active {
+    box-shadow: 0 0 #666564;
+    top: 5px;
+}
+
+.clase-boton{
+    grid-area: menu;
+    padding-top: 50px;
+    margin-left: 800px;
     width: 250px;
     height: 100px;
 }
@@ -76,22 +126,28 @@ body {
     top: 5px;
 }
 
-#ocultar-menu-visible{
-    display: inline-block;
-}
 
 .carta {
     width: 500px;
-    height: 750px;
-    margin: auto;
+    height: 900px;
+    margin-left: -120px;
     background-color: antiquewhite;
+    display: none;
 }
 
-#lista-carta {
+#mostrar-carta{
+    display: block;
+}
+
+.lista-carta {
     font-size: 30px;
     text-align: center;
-    padding-top: 50px;
-    display: block;
+    padding-top: 0px;
+    display: none;
+}
+
+#ocultar-menu-visible{
+    display: inline-block;
 }
 
 .titulo-lista{
@@ -107,15 +163,75 @@ body {
 .elementos-lista{
     display: block;
     list-style-type: none;
-    text-align: center;
+    text-align:start;
     padding-top: 10px;
     margin-bottom: 10px;
+    font-size: 25px;
 }
 
 #ocultar-tarjeta{
     display: none;
 }
 
-#ocultar-botoncito {
-    display: none;
+.input-inicio-1 {
+    background: silver;
+    border: 1px solid #393939;
+    border-radius: 5px 5px 5px 5px;
+    color: #393939;
+    font-size: 12px;
+    padding: 5px;
+    margin-left: 100px;
+    margin-top: 100px;
+    width: 300px;
+    height: 20px;
+}
+
+.input-inicio-2 {
+    background: silver;
+    border: 1px solid #393939;
+    border-radius: 5px 5px 5px 5px;
+    color: #393939;
+    font-size: 12px;
+    padding: 5px;
+    margin-left: 100px;
+    margin-top: 100px;
+    width: 300px;
+    height: 20px;
+}
+
+.boton-enviar-inicio{
+    min-width: 130px;
+    height: 40px;
+    color: #fff;
+    padding: 5px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    border-radius: 5px;
+    border: none;
+    background: #504f5a;
+    box-shadow: 0 5px #231f30;
+
+    margin-top: 40px;
+    margin-left: 180px;
+}
+
+.boton-enviar-inicio:hover {
+    box-shadow: 0 3px #2c0b8e;
+    top: 1px;
+}
+
+.boton-enviar-inicio:active {
+    box-shadow: 0 0 #2c0b8e;
+    top: 5px;
+}
+
+.titulo-bienvenida{
+    font-family: 'Dancing Script', cursive;
+    margin-left: 40px;
+    margin-top: 100px;
+    font-size: 40px;
 }
