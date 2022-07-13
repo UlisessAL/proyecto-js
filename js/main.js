@@ -55,20 +55,37 @@ botonIniciar.addEventListener("click", ()=> {
     const inputInicio2 = document.querySelector(".input-inicio-2");
     const botonEnviarInicio = document.querySelector(".boton-enviar-inicio");
 
+
+
     botonEnviarInicio.addEventListener("click", ()=> {
 
-        inputInicio1.id = "ocultar-tarjeta";
-        inputInicio2.id = "ocultar-tarjeta";
-        botonEnviarInicio.id = "ocultar-tarjeta";
+        localStorage.setItem("nombre", inputInicio1.value);
+        localStorage.setItem("apellido", inputInicio2.value);
+        
+        if (localStorage.getItem("nombre") == "" || localStorage.getItem("apellido") == "")  {
+            let alerta = document.createElement("p")
+            alerta.innerText = "Ningún campo puede estar vacío";
+            alerta.className = "alerta-p";
+            sectionInicio.appendChild(alerta);
+            
+        }else{
 
-        let nombre = inputInicio1.value;
-        let apellido = inputInicio2.value;
+            let alertaP = document.querySelector(".alerta-p")
 
-        const mensajeBienvenida = document.createElement("div");
+            alertaP.id = "ocultar-tarjeta";
+            inputInicio1.id = "ocultar-tarjeta";
+            inputInicio2.id = "ocultar-tarjeta";
+            botonEnviarInicio.id = "ocultar-tarjeta";
+            
 
-        mensajeBienvenida.innerHTML = "<h2 class = 'titulo-bienvenida'> Bienvenido/a " + nombre + " " + apellido + ", que vamos a comer hoy?</h2>";
+            const mensajeBienvenida = document.createElement("div");
 
-        sectionInicio.appendChild(mensajeBienvenida);
+            mensajeBienvenida.innerHTML = "<h2 class = 'titulo-bienvenida'> Bienvenido/a " + localStorage.getItem("nombre") + " " + localStorage.getItem("apellido") + ", que vamos a comer hoy?</h2>";
+
+            sectionInicio.appendChild(mensajeBienvenida);
+        }
+
+    
         
 
 

@@ -235,3 +235,9 @@ main{
     margin-top: 100px;
     font-size: 40px;
 }
+
+.alerta-p{
+    font-size: 30px;
+    color: #fff;
+    margin-left: 50px;
+}
